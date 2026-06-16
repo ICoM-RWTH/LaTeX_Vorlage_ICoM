@@ -1,0 +1,346 @@
+%--------------------------------------------------------------------------------------%
+%---------------------------- ICoM - LaTeX Vorlage (Merged) ---------------------------%
+% Basierend auf der ICoM LaTeX Vorlage und Verbesserungen von Yannick/Fabian Edenhofner
+% Based on the ICoM LaTeX template and improvements by Yannick/Fabian Edenhofner
+%
+% Bei Problemen / For issues: → see README.md
+%--------------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------------%
+%-------- Dokumentenbasics / Document Basics
+%--------------------------------------------------------------------------------------%
+
+\documentclass[11pt]{scrreprt}      % KOMA-Script report class
+\usepackage[utf8]{inputenc}         % UTF-8 encoding
+\usepackage{lmodern}                % Latin Modern fonts
+\usepackage[T1]{fontenc}            % Font encoding
+
+%-------- Spracheinstellung / Language setting
+% Hauptsprache zuletzt laden! / Load main language last!
+% Deutsch: \usepackage[english,ngerman]{babel}
+% English: \usepackage[ngerman,english]{babel}
+\input{./config.tex}                % Loads user config (language, author, title, etc.)
+
+\ifnum\ThesisLanguage=1
+  \usepackage[english,ngerman]{babel}   % Deutsch als Hauptsprache
+\else
+  \usepackage[ngerman,english]{babel}   % English as main language
+\fi
+\usepackage[autostyle=true]{csquotes}
+
+%-------- Schriftarten / Fonts
+
+\usepackage{helvet}
+\renewcommand*{\familydefault}{\sfdefault}
+\fontfamily{phv}\selectfont
+\setkomafont{disposition}{\normalfont\normalcolor\bfseries}
+\addtokomafont{chapterentry}{\normalfont\bfseries}
+\setkomafont{chapter}{\normalfont\huge\sffamily\bfseries}
+\addtokomafont{section}{\normalfont\sffamily\bfseries}
+\addtokomafont{subsection}{\normalfont\sffamily\bfseries}
+\addtokomafont{subsubsection}{\normalfont\sffamily\bfseries}
+\addtokomafont{caption}{\normalfont\sffamily}
+
+
+%-------- Seitenlayout / Page Layout
+
+\usepackage{setspace}               % Line spacing
+\usepackage{geometry}               % Page margins
+\geometry{a4paper, top=25mm, bottom=25mm, left=25mm, right=20mm, headsep=7.5mm, footskip=15mm}
+
+
+%-------- Tabellen, Abbildungen, Formeln / Tables, Figures, Equations
+
+\usepackage{multirow}               % Merge table rows
+\usepackage{makecell}               % Format individual table cells
+\usepackage{rotating}               % Rotate tables/objects
+\usepackage{booktabs}               % Professional tables (\toprule, \midrule, \bottomrule)
+\usepackage{amsmath}                % Mathematical formulas
+\usepackage{amssymb}                % Mathematical symbols
+\usepackage{graphicx}               % Include images
+\usepackage{subfigure}              % Subfigures
+
+\usepackage[font={footnotesize},labelfont=bf,labelformat=simple,labelsep=period,figurewithin=none,tablewithin=none]{caption}
+\usepackage{floatrow}
+
+% Einstellungen für Abbildungs-/Tabellenverzeichnis
+\KOMAoption{listof}{chapterentry}
+\newcommand\entrynumberwithprefix[2]{%
+  \csname listof#1entryname\endcsname\ #2}
+
+\DeclareTOCStyleEntry[
+  indent=0pt,
+  dynnumwidth,
+  entrynumberformat=\entrynumberwithprefix{lof}
+]{default}{figure}
+\DeclareTOCStyleEntry[
+  indent=0pt,
+  dynnumwidth,
+  entrynumberformat=\entrynumberwithprefix{lot}
+]{default}{table}
+
+\RedeclareSectionCommands[
+  tocentryformat=\normalfont,
+  tocpagenumberformat=\normalfont
+]{section}
+
+%-------- Floats & Tabellen / Floats & Tables
+
+\usepackage{float}
+\restylefloat{figure}
+\usepackage{wrapfig}                % Text wrapping around figures
+\usepackage[para]{threeparttable}   % Tables with legends/footnotes
+\usepackage{tabularx}               % Adjustable-width columns
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage{supertabular}           % Multi-page tables
+\usepackage{colortbl}               % Colored tables
+\usepackage{array}                  % Enhanced table handling
+\usepackage{placeins}               % \FloatBarrier to control float placement
+
+\newlength{\conditionwd}
+\newenvironment{conditions}[1][mit:]
+  {#1\tabularx{\textwidth-\widthof{#1}}[t]{>{$}l<{$} @{${}={}$} X@{}}}
+  {\endtabularx\\[\belowdisplayskip]}
+
+\usepackage{pdfpages}               % Include PDFs
+\newcommand\tabrotate[1]{\begin{turn}{90}\rlap{#1}\end{turn}}
+
+\usepackage{etoolbox}
+\usepackage{tocbasic}
+\usepackage{comment}                 % Multi-line comments: \begin{comment}...\end{comment}
+\usepackage{varwidth}                % Variable-width minipage
+
+%-------- Fußnoten / Footnotes
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}   % Continuous footnote numbering (no reset per chapter)
+
+%-------- Formelverzeichnis / List of Equations
+
+\makeatletter
+\ifnum\ThesisLanguage=1
+  \newcommand{\listofequationsname}{Formelverzeichnis}
+\else
+  \newcommand{\listofequationsname}{List of Equations}
+\fi
+\newcommand{\listofequations}{%
+  \addcontentsline{toc}{chapter}{\listofequationsname}
+  \@starttoc{loe}
+}
+\makeatother
+
+\DeclareTOCStyleEntries[
+  level=1,
+  beforeskip=1em,
+  entryformat=\normalfont,
+  pagenumberformat=\normalfont,
+  indent=0em,
+  numwidth=2.5em
+]{tocline}{equation}
+
+%-------- Hyperlinks
+
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=blue, citecolor=black]{hyperref}
+\usepackage{xcolor}
+
+%-------- Abkürzungsverzeichnis / List of Abbreviations
+% Uses the modern 'acro' package: only used acronyms are printed
+\usepackage{acro}
+\acsetup{list/display=used}
+
+%-------- Literaturverwaltung / Bibliography (biblatex + biber)
+
+\usepackage[backend=biber,
+  style=apa,
+  natbib=true,
+  hyperref=true,
+]{biblatex}
+
+% Fix for shortauthor in APA style
+\makeatletter
+\AtEveryCitekey{%
+  \ifnameundef{shortauthor}{}{\def\cbx@apa@ifnamesaved{\@firstoftwo}}%
+}
+\makeatother
+
+\addbibresource{./Literatur/samplebibfile.bib}
+
+%-------- Sonstige Pakete / Miscellaneous Packages
+
+\usepackage{todonotes}               % \todo{} notes in text
+
+%--------------------------------------------------------------------------------------%
+%-------- Benutzerkonfiguration laden / Load user configuration
+%--------------------------------------------------------------------------------------%
+
+\input{./Chapters/Acronyms_Definition}   % Acronym definitions
+\input{settings}                          % Page layout, headers, etc.
+
+% Allow slight extra word spacing to avoid overfull hboxes with \texttt
+\emergencystretch=3em
+
+%--------------------------------------------------------------------------------------%
+%-------- Beginn Dokument / Begin Document
+%--------------------------------------------------------------------------------------%
+
+\begin{document}
+\begin{spacing}{1.2}
+
+%-------- Deckblatt / Cover Page
+\hypersetup{pageanchor=false}
+\include{./Chapters/00_Deckblatt}
+\cleardoublepage
+\hypersetup{pageanchor=true}
+\pagenumbering{Roman}
+
+%-------- Aufgabenstellung / Task Description
+\phantomsection
+\ifnum\ThesisLanguage=1
+  \addcontentsline{toc}{chapter}{Aufgabenstellung}
+\else
+  \addcontentsline{toc}{chapter}{Task Description}
+\fi
+% Uncomment below and replace with your PDF:
+% \includepdf[pages=-]{./Chapters/Aufgabenstellung_dummy}
+\cleardoublepage
+
+\pagestyle{scrheadings}
+\renewcommand{\chapterpagestyle}{scrheadings}
+
+%-------- Kurzfassung / Abstract (DE)
+\newpage
+\phantomsection
+\ifnum\ThesisLanguage=1
+  \addcontentsline{toc}{chapter}{Kurzfassung}
+\else
+  \addcontentsline{toc}{chapter}{Kurzfassung (German Abstract)}
+\fi
+\include{./Chapters/III_Kurzfassung}
+
+%-------- Abstract (EN)
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
+\include{./Chapters/IV_Abstract}
+
+%-------- Inhaltsverzeichnis / Table of Contents
+\cleardoublepage
+\phantomsection
+\ifnum\ThesisLanguage=1
+  \addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+  \renewcommand{\contentsname}{Inhaltsverzeichnis}
+\else
+  \addcontentsline{toc}{chapter}{Table of Contents}
+  \renewcommand{\contentsname}{Table of Contents}
+\fi
+\begin{spacing}{1.0}
+\tableofcontents
+\end{spacing}
+
+%-------- Abbildungsverzeichnis / List of Figures
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+%-------- Tabellenverzeichnis / List of Tables
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+%-------- Abkürzungsverzeichnis / List of Abbreviations
+\newpage
+\phantomsection
+\ifnum\ThesisLanguage=1
+  \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+  \chapter*{Abkürzungsverzeichnis}
+  \markboth{Abkürzungsverzeichnis}{}
+\else
+  \addcontentsline{toc}{chapter}{List of Abbreviations}
+  \chapter*{List of Abbreviations}
+  \markboth{List of Abbreviations}{}
+\fi
+\printacronyms[heading=none]
+
+%-------- Symbolverzeichnis / List of Symbols
+\newpage
+\phantomsection
+\ifnum\ThesisLanguage=1
+  \addcontentsline{toc}{chapter}{Symbolverzeichnis}
+\else
+  \addcontentsline{toc}{chapter}{List of Symbols}
+\fi
+\include{./Chapters/IX_mysymbols}
+
+%-------- Formelverzeichnis / List of Equations
+\newpage
+\phantomsection
+\include{./Chapters/X_myformulas}
+
+%-------- Hauptteil / Main Content
+\newpage
+\pagenumbering{arabic}
+\renewcommand{\arraystretch}{1.2}
+
+%--------------------------------------------------------------------------------------%
+%%% Hinweise zur Vorlage / Template Instructions %%%
+%%% >>> VOR ABGABE AUSKOMMENTIEREN / COMMENT OUT BEFORE SUBMISSION <<< %%%
+\include{./Chapters/YY_Bearbeitungsinformationen}
+
+%--------------------------------------------------------------------------------------%
+%%% Kapitel / Chapters %%%
+\include{./Chapters/1_Einleitung}
+\include{./Chapters/2_Theoretische Grundlagen}
+% \include{./Chapters/3_...}        % ← Add your chapters here
+% \include{./Chapters/4_...}
+% \include{./Chapters/5_...}
+
+%--------------------------------------------------------------------------------------%
+%%% Literaturverzeichnis / Bibliography %%%
+\newpage
+\phantomsection
+\ifnum\ThesisLanguage=1
+  \addcontentsline{toc}{chapter}{Literaturverzeichnis}
+  \printbibliography[title={Literaturverzeichnis}]
+\else
+  \addcontentsline{toc}{chapter}{Bibliography}
+  \printbibliography[title={Bibliography}]
+\fi
+
+%--------------------------------------------------------------------------------------%
+%%% Konsultationsverzeichnis / Consultation Directory %%%
+\newpage
+\phantomsection
+\ifnum\ThesisLanguage=1
+  \chapter*{Konsultationsverzeichnis}
+  \addcontentsline{toc}{chapter}{Konsultationsverzeichnis}
+\else
+  \chapter*{Consultation Directory}
+  \addcontentsline{toc}{chapter}{Consultation Directory}
+\fi
+\input{./Chapters/Konsultationsverzeichnis.tex}
+
+%--------------------------------------------------------------------------------------%
+%%% Anhang / Appendix %%%
+\cleardoublepage
+\appendix
+\renewcommand{\thepage}{A-\arabic{page}}
+\setcounter{page}{1}
+\ifnum\ThesisLanguage=1
+  \chapter{Anhang}
+\else
+  \chapter{Appendix}
+\fi
+\input{./Chapters/A_Anhang.tex}
+
+%--------------------------------------------------------------------------------------%
+%%% Eidesstattliche Versicherung / Statutory Declaration %%%
+\newpage
+\ifnum\ThesisLanguage=1
+  \addcontentsline{toc}{chapter}{Eidesstattliche Versicherung}
+\else
+  \addcontentsline{toc}{chapter}{Statutory Declaration}
+\fi
+% Uncomment below and replace with your PDF:
+% \includepdf[pages=-, pagecommand={\thispagestyle{empty}}]{./Chapters/EidesstattlicheVersicherung_dummy}
+
+\end{spacing}
+\end{document}

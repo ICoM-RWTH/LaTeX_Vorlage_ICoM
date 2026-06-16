@@ -1,0 +1,25 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.loe
+*.lof
+*.lot
+*.log
+*.run.xml
+*.synctex.gz
+*.toc
+*.out
+
+# Output PDF (optional — comment out if you want to ship a sample PDF)
+*.pdf
+
+# Editor
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini

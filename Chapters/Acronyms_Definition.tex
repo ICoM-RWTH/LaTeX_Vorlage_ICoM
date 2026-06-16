@@ -1,0 +1,37 @@
+%--------------------------------------------------------------------------------------%
+% Acronyms_Definition.tex — Abkürzungen definieren / Define Abbreviations
+%
+% Verwendet das 'acro'-Paket. Nur tatsächlich im Text verwendete Abkürzungen
+% erscheinen im Verzeichnis (print-only-used).
+%
+% Uses the 'acro' package. Only acronyms actually used in the text
+% will appear in the list of abbreviations (print-only-used).
+%
+% Verwendung im Text / Usage in text:
+%   \ac{bim}       → erste Verwendung: "Building Information Modeling (BIM)", danach: "BIM"
+%   \acs{bim}      → immer Kurzform: "BIM"
+%   \acl{bim}      → immer Langform: "Building Information Modeling"
+%   \acf{bim}      → erzwingt Langform + Kurzform: "Building Information Modeling (BIM)"
+%   \acp{bim}      → Plural
+%--------------------------------------------------------------------------------------%
+
+\DeclareAcronym{bim}{
+  short = BIM,
+  long  = Building Information Modeling,
+}
+
+\DeclareAcronym{cde}{
+  short = CDE,
+  long  = Common Data Environment,
+}
+
+\DeclareAcronym{icom}{
+  short = ICoM,
+  long  = Institut für Baumanagement{,} Digitales Bauen und Robotik im Bauwesen,
+}
+
+% Weitere Abkürzungen hier hinzufügen / Add more abbreviations here:
+% \DeclareAcronym{abc}{
+%   short = ABC,
+%   long  = Ausgeschriebene Bedeutung,
+% }

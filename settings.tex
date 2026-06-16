@@ -1,0 +1,31 @@
+%--------------------------------------------------------------------------------------%
+% settings.tex — Seitenlayout, Kopf-/Fußzeile / Page Layout, Headers/Footers
+%--------------------------------------------------------------------------------------%
+
+% Absätze / Paragraphs
+\setlength{\parindent}{0em}         % No paragraph indentation
+\setlength{\parskip}{1.5ex}         % Spacing between paragraphs
+\renewcommand{\sectfont}{\rmfamily\bfseries}
+
+% Seitenlayout mit scrlayer-scrpage (KOMA-kompatibel)
+\usepackage[automark,headsepline]{scrlayer-scrpage}
+\clearpairofpagestyles
+
+\pagestyle{scrheadings}
+\ihead{\headmark}                    % Chapter title in header (inner)
+\ohead{\pagemark}                    % Page number in header (outer)
+\cfoot{}                             % No footer
+\setkomafont{pagehead}{\normalfont}  % Remove italics from header
+\KOMAoptions{headsepline=0.4pt}
+
+% Header/Footer spacing
+\setlength{\headsep}{7.5mm}
+\setlength{\footskip}{7.5mm}
+
+% Reduce space above chapter headings
+\renewcommand*{\chapterheadstartvskip}{\vspace*{0.1cm}}
+
+% Schusterjungen und Witwen vermeiden / Avoid orphans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000

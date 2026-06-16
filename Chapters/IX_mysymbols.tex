@@ -1,0 +1,23 @@
+\newpage
+\ifnum\ThesisLanguage=1
+  \markboth{Symbolverzeichnis}{Symbolverzeichnis}
+  \chapter*{Symbolverzeichnis}
+\else
+  \markboth{List of Symbols}{List of Symbols}
+  \chapter*{List of Symbols}
+\fi
+
+% Symbole hier eintragen / Enter symbols here:
+% Format: Symbol — Beschreibung — Einheit
+\newcommand{\symbolentry}[3]{%
+  \noindent
+  \makebox[2.5cm][l]{$#1$}%
+  \makebox[7.5cm][l]{#2}%
+  \makebox[3cm][r]{$#3$}\\
+}
+
+\symbolentry{\sigma}{Spannung / Stress}{\mathrm{N}/\mathrm{m}^2}
+\symbolentry{F}{Kraft / Force}{\mathrm{N}}
+\symbolentry{A}{Fläche / Area}{\mathrm{m}^2}
+\symbolentry{\varepsilon}{Dehnung / Strain}{-}
+\symbolentry{E}{Elastizitätsmodul / Young's Modulus}{\mathrm{N}/\mathrm{mm}^2}

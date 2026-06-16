@@ -1,0 +1,103 @@
+%--------------------------------------------------------------------------------------%
+% 00_Deckblatt.tex — Titelseite / Cover Page
+% Alle Werte kommen aus config.tex / All values come from config.tex
+% Layout entspricht der originalen ICoM-Vorlage / Layout matches original ICoM template
+%--------------------------------------------------------------------------------------%
+
+\begin{titlepage}
+\thispagestyle{empty}
+
+  % Header logo (manual placement, top right — like original ICoM template)
+  \begin{picture}(0,0)
+    \put(215,0){\includegraphics[width=10.3cm]{Bilder/rwth_icom_de_rgb.png}}
+  \end{picture}
+
+  \setlength{\topskip}{0pt}
+
+  % Institute info
+  \begin{center}
+    \small
+    \ifnum\ThesisLanguage=1
+      Diese Arbeit wurde vorgelegt am Lehrstuhl und Institut für Baumanagement, Digitales Bauen und Robotik im Bauwesen (ICoM)\\
+      \textcolor{gray!80}{The present thesis was submitted to the Chair and Institute of Construction Management, Digital Engineering and Robotics in Construction (ICoM)}
+    \else
+      The present thesis was submitted to the Chair and Institute of Construction Management, Digital Engineering and Robotics in Construction (ICoM)\\
+      \textcolor{gray!80}{Diese Arbeit wurde vorgelegt am Lehrstuhl und Institut für Baumanagement, Digitales Bauen und Robotik im Bauwesen (ICoM)}
+    \fi
+  \end{center}
+
+  \vspace{2em}
+
+  % Title block — Thesis type
+  \begin{center}
+    \ifnum\ThesisType=1
+      % Bachelorarbeit
+      \ifnum\ThesisLanguage=1
+        \Huge\textbf{Bachelorarbeit}\\
+        {\LARGE\textbf{\textcolor{gray!80}{Bachelor's Thesis}}}
+      \else
+        \Huge\textbf{Bachelor's Thesis}\\
+        {\LARGE\textbf{\textcolor{gray!80}{Bachelorarbeit}}}
+      \fi
+    \else
+      % Masterarbeit
+      \ifnum\ThesisLanguage=1
+        \Huge\textbf{Masterarbeit}\\
+        {\LARGE\textbf{\textcolor{gray!80}{Master's Thesis}}}
+      \else
+        \Huge\textbf{Master's Thesis}\\
+        {\LARGE\textbf{\textcolor{gray!80}{Masterarbeit}}}
+      \fi
+    \fi
+  \end{center}
+
+  \vspace{2em}
+
+  % Main title
+  \begin{center}
+    \ifnum\ThesisLanguage=1
+      {\Large
+      \TitleDE}\\
+      \vspace{1em}
+      {\Large\textcolor{gray!80}{%
+      \TitleEN}}
+    \else
+      {\Large
+      \TitleEN}\\
+      \vspace{1em}
+      {\Large\textcolor{gray!80}{%
+      \TitleDE}}
+    \fi
+  \end{center}
+
+  \vspace{2em}
+
+  % Author and examiner block
+  \begin{center}
+    \normalsize
+    \ifnum\ThesisLanguage=1
+      Vorgelegt von:\\
+    \else
+      Submitted by:\\
+    \fi
+    \textbf{\AuthorName}\\
+    Matr.-Nr.: \MatrikelNr\\[2em]
+
+    \begin{tabular}{rl}
+      \ifnum\ThesisLanguage=1
+        Betreuer/in: & \SupervisorA \\
+        1. Prüfer/in: & \ExaminerA \\
+        2. Prüfer/in: & \ExaminerB \\
+      \else
+        Supervisor: & \SupervisorA \\
+        1st Examiner: & \ExaminerA \\
+        2nd Examiner: & \ExaminerB \\
+      \fi
+    \end{tabular}
+
+    \vspace{2em}
+
+    Aachen, \HandInDate
+  \end{center}
+
+\end{titlepage}

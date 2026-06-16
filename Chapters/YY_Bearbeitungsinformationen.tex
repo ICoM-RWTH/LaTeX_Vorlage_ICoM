@@ -1,0 +1,479 @@
+%--------------------------------------------------------------------------------------%
+% YY_Bearbeitungsinformationen.tex — Hinweise zur Nutzung / Usage Instructions
+%
+% >>> VOR ABGABE AUSKOMMENTIEREN in Basis.tex! / COMMENT OUT in Basis.tex BEFORE SUBMISSION! <<<
+%    In Basis.tex: % \include{./Chapters/YY_Bearbeitungsinformationen}
+%
+% Dieses Kapitel zeigt alle wichtigen LaTeX-Funktionen mit Erklärung UND Live-Beispiel.
+% This chapter shows all important LaTeX features with explanation AND live examples.
+%--------------------------------------------------------------------------------------%
+
+\ifnum\ThesisLanguage=1
+  \chapter{Hinweise zur Vorlage}
+\else
+  \chapter{Template Instructions}
+\fi
+\label{ch:hinweise}
+
+\ifnum\ThesisLanguage=1
+  Dieses Kapitel enthält Hinweise zur Nutzung der Vorlage sowie Beispiele für Zitationen, Fußnoten, Abbildungen, Tabellen, Formeln und Abkürzungen. \textbf{Vor Abgabe der Arbeit muss dieses Kapitel in \texttt{Basis.tex} auskommentiert werden.}
+
+  Kapitel sollten immer auf einer neuen Seite beginnen
+  (dies geschieht automatisch durch \texttt{\textbackslash include\{\}}).
+\else
+  This chapter contains instructions for using the template as well as live examples for citations, footnotes, figures, tables, equations, and abbreviations. \textbf{Before submitting your thesis, comment out this chapter in \texttt{Basis.tex}.}
+
+  Chapters should always start on a new page
+  (this happens automatically via \texttt{\textbackslash include\{\}}).
+\fi
+
+
+%==============================================================================%
+%===== KONFIGURATION / CONFIGURATION =====%
+%==============================================================================%
+\ifnum\ThesisLanguage=1
+  \section{Vorlage konfigurieren}
+  Alle persönlichen Angaben werden zentral in \texttt{config.tex} eingetragen:
+  \begin{itemize}
+    \item \verb|\ThesisLanguage| → \texttt{1} = Deutsch, \texttt{2} = English (steuert das gesamte Dokument)
+    \item \verb|\ThesisType| → \texttt{1} = Bachelorarbeit, \texttt{2} = Masterarbeit
+    \item \verb|\AuthorName|, \verb|\MatrikelNr|, \verb|\HandInDate|
+    \item \verb|\TitleDE|, \verb|\TitleEN|
+    \item \verb|\SupervisorA|, \verb|\ExaminerA|, \verb|\ExaminerB|
+  \end{itemize}
+
+  Diese Werte werden automatisch auf dem Deckblatt und ggf.\ an weiteren Stellen im Dokument verwendet.
+
+\else
+  \section{Configuring the Template}
+  All personal information is set centrally in \texttt{config.tex}:
+  \begin{itemize}
+    \item \verb|\ThesisLanguage| → \texttt{1} = German, \texttt{2} = English (controls the entire document)
+    \item \verb|\ThesisType| → \texttt{1} = Bachelor's Thesis, \texttt{2} = Master's Thesis
+    \item \verb|\AuthorName|, \verb|\MatrikelNr|, \verb|\HandInDate|
+    \item \verb|\TitleDE|, \verb|\TitleEN|
+    \item \verb|\SupervisorA|, \verb|\ExaminerA|, \verb|\ExaminerB|
+  \end{itemize}
+
+  These values are automatically used on the cover page and elsewhere in the document.
+\fi
+
+
+%==============================================================================%
+%===== ZITIEREN / CITING =====%
+%==============================================================================%
+\ifnum\ThesisLanguage=1
+  \section{Zitieren}
+  Bitte stimmt den Zitationsstil mit eurem betreuenden Assistenten ab. Diese Vorlage nutzt den APA-Stil.
+  \subsection{LaTeX-Befehle}
+  \begin{itemize}
+    \item Indirekte Zitation: \verb|\parencite[vgl.][S. 3f]{key}|
+    \item Direkte Zitation im Text: \verb|\textcite[S. 3]{key}|
+    \item Nur Autor: \verb|\citeauthor{key}|
+    \item Multiple Quellen: \verb|\parencites[S. 3]{key1}[S. 4]{key2}|
+  \end{itemize}
+
+  \subsection{Literatur hinzufügen}
+  Neue Quellen werden in der Datei \texttt{Literatur/samplebibfile.bib} eingetragen. Empfohlen wird ein Literaturverwaltungstool wie \href{https://www.zotero.org/}{Zotero} oder \href{https://www.citavi.com/}{Citavi}, das BibTeX-Dateien exportieren kann.
+
+  \subsection{Beispiele}
+  Indirekte Zitation: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\parencite[vgl.][S. 3f]{FederalMinistryforEconomicAffairs.2022}
+
+  Direkte Zitation im Text: Laut \textcite[S. 3]{DAgostino.2021} funktioniert das direkte Zitieren auf diese Weise.
+  Oder man könnte gemäß \citeauthor{Kritzinger.2018} auch nur die Autorennamen ausgeben.
+
+  Multiple Quellen: Wie geht man vor bei multiplen Quellen? \parencites[S. 3]{Borrmann.2018}[S. 4]{Kritzinger.2018}
+
+\else
+  \section{Citing}
+  Please coordinate the citation style with your supervisor. This template uses the APA style.
+
+  \subsection{LaTeX Commands}
+  \begin{itemize}
+    \item Indirect citation: \verb|\parencite[cf.][p. 3f]{key}|
+    \item In-text citation: \verb|\textcite[p. 3]{key}|
+    \item Author only: \verb|\citeauthor{key}|
+    \item Multiple sources: \verb|\parencites[p. 3]{key1}[p. 4]{key2}|
+  \end{itemize}
+
+  \subsection{Adding References}
+  Add new references to \texttt{Literatur/samplebibfile.bib}. We recommend a reference manager like \href{https://www.zotero.org/}{Zotero} or \href{https://www.citavi.com/}{Citavi} that can export BibTeX files.
+
+  \subsection{Examples}
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. \parencite[cf.][p. 3f]{FederalMinistryforEconomicAffairs.2022}
+
+  According to \textcite[p. 3]{DAgostino.2021} text citing works this way.
+  Or reference only the author name: \citeauthor{Kritzinger.2018}.
+
+  How to cite multiple sources? \parencites[p. 3]{Borrmann.2018}[p. 4]{Kritzinger.2018}
+\fi
+
+
+%==============================================================================%
+%===== FUSSNOTEN / FOOTNOTES =====%
+%==============================================================================%
+\ifnum\ThesisLanguage=1
+  \section{Fußnoten}
+  Fußnoten werden mit \verb|\footnote{...}| direkt an der gewünschten Stelle im Text eingefügt. Die Nummerierung erfolgt \textbf{automatisch} und ist in dieser Vorlage durchgehend (sie wird nicht pro Kapitel zurückgesetzt).
+
+  \textbf{Tipp:} Die Fußnote direkt an das Bezugswort \emph{ohne} Leerzeichen anhängen, damit die Fußnotenzahl korrekt platziert wird.
+
+  \subsection{Beispiel}
+  Dies ist ein Satz mit einer Fußnote.\footnote{Dies ist der Text der Fußnote, der am Seitenende erscheint.} Der Text läuft danach normal weiter.
+
+\else
+  \section{Footnotes}
+  Footnotes are inserted directly at the desired position in the text using \verb|\footnote{...}|. Numbering is \textbf{automatic} and continuous throughout this template (it is not reset per chapter).
+
+  \textbf{Tip:} Attach the footnote directly to the reference word \emph{without} a space so the footnote marker is placed correctly.
+
+  \subsection{Example}
+  This is a sentence with a footnote.\footnote{This is the footnote text that appears at the bottom of the page.} The text then continues normally.
+\fi
+
+
+%==============================================================================%
+%===== ABKÜRZUNGEN / ABBREVIATIONS =====%
+%==============================================================================%
+\ifnum\ThesisLanguage=1
+  \section{Abkürzungen}
+  Abkürzungen werden in \texttt{Chapters/Acronyms\_Definition.tex} definiert. Es wird das \texttt{acro}-Paket verwendet; nur tatsächlich im Text benutzte Abkürzungen erscheinen im Verzeichnis.
+
+  \subsection{LaTeX-Befehle}
+  \begin{itemize}
+    \item \verb|\ac{bim}| → Erste Verwendung: Langform (Kurzform), danach nur Kurzform
+    \item \verb|\acs{bim}| → Immer Kurzform
+    \item \verb|\acl{bim}| → Immer Langform
+    \item \verb|\acf{bim}| → Erzwingt Lang + Kurzform
+    \item \verb|\acp{bim}| → Pluralform
+  \end{itemize}
+
+  \subsection{Beispiel}
+  Erste Verwendung: \ac{bim}. Zweite Verwendung: \ac{bim}. Erzwungene Langform: \acf{cde}.
+
+\else
+  \section{Abbreviations}
+  Abbreviations are defined in \texttt{Chapters/Acronyms\_Definition.tex}. The \texttt{acro} package is used; only abbreviations actually referenced in the text will appear in the list.
+
+  \subsection{LaTeX Commands}
+  \begin{itemize}
+    \item \verb|\ac{bim}| → First use: long form (short form), afterwards short form only
+    \item \verb|\acs{bim}| → Always short form
+    \item \verb|\acl{bim}| → Always long form
+    \item \verb|\acf{bim}| → Forces long + short form
+    \item \verb|\acp{bim}| → Plural form
+  \end{itemize}
+
+  \subsection{Live Example}
+  First use: \ac{bim}. Second use: \ac{bim}. Forced long form: \acf{cde}.
+\fi
+
+
+%==============================================================================%
+%===== GRAFIKEN / FIGURES =====%
+%==============================================================================%
+\ifnum\ThesisLanguage=1
+  \section{Grafiken einfügen}
+
+  Prinzipiell könnt ihr direkt in eurer \LaTeX{} Umgebung eigene Grafiken erzeugen, etwa mit dem \texttt{TikZ}-Paket. Ihr könnt jedoch auch mit Tools wie dem kostenlosen \href{https://www.drawio.com/}{draw.io} eigene Grafiken zeichnen und diese verlustfrei einbinden. Die direkte Einbindung von *.svg-Dateien klappt nur mit Umwegen, weswegen sich die Einbindung der Grafiken als *.pdf-Dateien anbietet.
+
+  Beispielsweise können wir folgenden Workflow zur Erstellung von Grafiken als verlustfreie *.pdf-Dateien empfehlen:
+  \begin{itemize}
+    \item Bei Verwendung der Draw.io Desktop-Applikation zunächst den Font \textit{Nimbus Sans L Regular} downloaden (bspw.\ \href{https://www.1001fonts.com/nimbus-sans-l-font.html}{hier}) und installieren → hierdurch kann gewährleistet werden, dass der Font der zu erstellenden Grafiken zum Font des \LaTeX{} Fließtextes passt
+    \item Beliebige Abbildung in Draw.io zeichnen → Schriftart des Textes anpassen, indem auf den jeweiligen Text geklickt wird, unter dem Reiter \textit{Text} auf das Dropdown-Menü unter \textit{Schrift} geklickt wird und dort \textit{Benutzerdefiniert\ldots} ausgewählt wird → hier nun den Fontnamen \textit{Nimbus Sans L} eingegeben
+    \item Zum Export die Abbildung markieren → \textit{Exportieren als} → \textit{PDF} → und hier in der Eingabemaske die Einstellungen \textit{Nur Markierung}, \textit{Zuschneiden} und \textit{Transparenter Hintergrund} auswählen
+  \end{itemize}
+
+  In der Abbildung~\ref{fig:drawiobeispiel} kann ein entsprechendes Abbildungsbeispiel eingesehen werden, welches mit dem zuvor beschriebenen Workflow erstellt wurde.
+\else
+  \section{Including Figures}
+
+  You can create graphics directly in \LaTeX{}, e.g.\ with the \texttt{TikZ} package. Alternatively, use free tools like the free \href{https://www.drawio.com/}{draw.io} to draw your own graphics and embed them losslessly. Embedding *.svg files directly only works with workarounds, so embedding graphics as *.pdf files is recommended.
+
+  As an example, we can recommend the following workflow for creating graphics as lossless *.pdf files:
+  \begin{itemize}
+    \item When using the draw.io desktop application, first download the font \textit{Nimbus Sans L Regular} (e.g.\ \href{https://www.1001fonts.com/nimbus-sans-l-font.html}{here}) and install it → this ensures that the font of the graphics matches the font of the \LaTeX{} body text
+    \item Draw any figure in draw.io → adjust the text font by clicking the respective text, clicking the dropdown menu under \textit{Font} in the \textit{Text} tab, and selecting \textit{Custom\ldots} → then enter the font name \textit{Nimbus Sans L}
+    \item To export, select the figure → \textit{Export as} → \textit{PDF} → and in the dialog choose the settings \textit{Selection Only}, \textit{Crop} and \textit{Transparent Background}
+  \end{itemize}
+
+  Figure~\ref{fig:drawiobeispiel} shows a corresponding example created with the workflow described above.
+\fi
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{./Bilder/beispielabbildung}
+  \ifnum\ThesisLanguage=1
+    \caption{Beispielabbildung mit draw.io erstellt}
+  \else
+    \caption{Example figure created with draw.io}
+  \fi
+  \label{fig:drawiobeispiel}
+\end{figure}
+
+\ifnum\ThesisLanguage=1
+  \subsection{LaTeX-Vorlage für Abbildungen}
+  \begin{verbatim}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{./Bilder/dateiname}
+  \caption[Kurztitel]{Langbeschreibung. Quelle: \cite{key}}
+  \label{fig:meinlabel}
+\end{figure}
+  \end{verbatim}
+  \textbf{Tipps:}
+  \begin{itemize}
+    \item Immer textuellen Bezug herstellen: ``wie in Abbildung \verb|\ref{fig:meinlabel}| dargestellt''
+    \item Vektorgrafiken (PDF, SVG) verwenden für verlustfreie Darstellung
+    \item Kostenlose Tools: \href{https://www.drawio.com/}{draw.io}, \href{https://inkscape.org/}{Inkscape}
+    \item \verb|\FloatBarrier| einfügen, um Grafiken an gewünschter Stelle zu halten
+  \end{itemize}
+
+  \subsection{Beispiel: Einzelne Abbildung}
+  In der folgenden Abbildung~\ref{fig:icomlogo} ist das ICoM-Logo dargestellt.
+\else
+  \subsection{LaTeX Template for Figures}
+  \begin{verbatim}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{./Bilder/filename}
+  \caption[Short title]{Long description. Source: \cite{key}}
+  \label{fig:mylabel}
+\end{figure}
+  \end{verbatim}
+
+  \textbf{Tips:}
+  \begin{itemize}
+    \item Always reference figures in text: ``as shown in Figure \verb|\ref{fig:mylabel}|''
+    \item Use vector graphics (PDF, SVG) for lossless rendering
+    \item Free tools: \href{https://www.drawio.com/}{draw.io}, \href{https://inkscape.org/}{Inkscape}
+    \item Use \verb|\FloatBarrier| to keep floats from drifting
+  \end{itemize}
+
+  \subsection{Example: Single Figure}
+  The following Figure~\ref{fig:icomlogo} shows the ICoM logo.
+\fi
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.85\textwidth]{./Bilder/rwth_icom_de_rgb}
+  \caption[ICoM Logo]{ICoM Logo. Quelle/Source: \cite{ICoM2022}}
+  \label{fig:icomlogo}
+\end{figure}
+
+\ifnum\ThesisLanguage=1
+  \subsection{Beispiel: Mehrere Abbildungen nebeneinander}
+  Um mehrere Abbildungen nebeneinander einzufügen, kann man das Paket \texttt{floatrow} nutzen (siehe \href{https://ctan.org/pkg/floatrow}{\texttt{floatrow} Dokumentation}). Abbildungen~\ref{fig:my_label_1} und \ref{fig:my_label_2} zeigen ein Beispiel:
+\else
+  \subsection{Example: Side-by-Side Figures}
+  To place multiple figures side by side, use the \texttt{floatrow} package (see \href{https://ctan.org/pkg/floatrow}{\texttt{floatrow} documentation}). Figures~\ref{fig:my_label_1} and \ref{fig:my_label_2} show an example:
+\fi
+
+\begin{figure}[ht]
+  \CommonHeightRow[1.5cm]{%
+    \begin{floatrow}[2]
+      \ffigbox[\FBwidth]{%
+        \caption{First Picture}%
+        \label{fig:my_label_1}%
+      }{%
+        \includegraphics[height=\CommonHeight]{./Bilder/rwth_icom_de_rgb}%
+      }
+      \ffigbox[\FBwidth]{%
+        \caption{Second Picture}%
+        \label{fig:my_label_2}%
+      }{
+        \includegraphics[height=\CommonHeight]{./Bilder/rwth_icom_de_rgb}
+      }
+    \end{floatrow}
+  }
+\end{figure}
+
+
+%==============================================================================%
+%===== TABELLEN / TABLES =====%
+%==============================================================================%
+\ifnum\ThesisLanguage=1
+  \section{Tabellen einfügen}
+
+  \subsection{LaTeX-Vorlage für Tabellen}
+  \begin{verbatim}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l l l}
+    \toprule
+    Spalte 1 & Spalte 2 & Spalte 3 \\
+    \midrule
+    Wert 1   & Wert 2   & Wert 3   \\
+    \bottomrule
+  \end{tabular}
+  \caption{Beschreibung der Tabelle}
+  \label{tab:meinetabelle}
+\end{table}
+  \end{verbatim}
+
+  \textbf{Tipp:} Es gibt webbasierte \LaTeX{}-Tabellengeneratoren, z.B.\ \href{https://www.tablesgenerator.com/}{tablesgenerator.com}.
+
+  \subsection{Beispiel}
+  Tabelle~\ref{tab:express-types} und Tabelle~\ref{tab: example} zeigen ein Beispiel:
+
+\else
+  \section{Including Tables}
+
+  \subsection{LaTeX Template for Tables}
+  \begin{verbatim}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l l l}
+    \toprule
+    Column 1 & Column 2 & Column 3 \\
+    \midrule
+    Value 1  & Value 2  & Value 3  \\
+    \bottomrule
+  \end{tabular}
+  \caption{Table description}
+  \label{tab:mytable}
+\end{table}
+  \end{verbatim}
+  \textbf{Tip:} There are web-based \LaTeX{} table generators, e.g.\ \href{https://www.tablesgenerator.com/}{tablesgenerator.com}.
+
+  \subsection{Example}
+  Table~\ref{tab:express-types} and Table~\ref{tab: example} show an example:
+\fi
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l l}
+    \toprule
+    \textbf{Description} & \textbf{Value Set} \\
+    \midrule
+    BINARY   & 0 or 1 \\
+    BOOLEAN  & TRUE or FALSE \\
+    LOGICAL  & TRUE, UNKNOWN or FALSE \\
+    INTEGER  & Integers \\
+    REAL     & All rational and irrational numbers \\
+    NUMBER   & All numerical values \\
+    STRING   & Strings of any type \\
+    \bottomrule
+  \end{tabular}
+  \caption{Simple data types in EXPRESS}
+  \label{tab:express-types}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\setlength{\tabcolsep}{14pt}
+\begin{tabular}{||c c c c||} 
+\hline
+Col1 & Col2 & Col2 & Col3 \\ [0.5ex] 
+\hline\hline
+1 & 6 & 87837 & 787 \\ 
+2 & 7 & 78 & 5415 \\
+3 & 545 & 778 & 7507 \\
+4 & 545 & 18744 & 7560 \\
+5 & 88 & 788 & 6344 \\ [1ex] 
+\hline
+\end{tabular}
+\caption{Beispieltabelle mit Zahlen}
+\label{tab: example}
+\end{table}
+
+%==============================================================================%
+%===== FORMELN / EQUATIONS =====%
+%==============================================================================%
+\ifnum\ThesisLanguage=1
+  \section{Formeln und Formelverzeichnis}
+  Die Nummerierung erfolgt \textbf{vollautomatisch}: Jede \texttt{equation}-Umgebung erhält fortlaufend die nächste Nummer entsprechend ihrer Position im Dokument — du vergibst die Nummern also nie selbst. Auch Querverweise mit \verb|\label{...}| und \verb|\ref{...}| nutzen automatisch die richtige Nummer und passen sich an, wenn sich Formeln verschieben.
+
+  Eine Formel wird jedoch \textbf{nicht automatisch} ins Formelverzeichnis aufgenommen. Dafür nach der Gleichung folgenden Befehl einfügen (du gibst nur den Beschreibungstext an, nicht die Nummer):
+  \begin{verbatim}
+\addcontentsline{loe}{equation}{%
+  \protect\numberline{\theequation}Beschreibung}
+  \end{verbatim}
+
+  Symbole sind in das Symbolverzeichnis
+  (\texttt{IX\_mysymbols.tex}) in der Reihenfolge ihrer Nennung
+  aufzunehmen und bei der ersten Nennung zu erläutern.
+
+  \subsection{Beispiele}
+  Formeln sollten in der Reihenfolge ihrer Nennung im Text auftauchen; die Nummerierung selbst übernimmt \LaTeX{} dann automatisch.
+  Man kann Formeln einfügen, wie z.B.\ Gleichung~\ref{eqn:einstein}:
+
+\else
+  \section{Equations and List of Equations}
+  Numbering is \textbf{fully automatic}: each \texttt{equation} environment is assigned the next consecutive number based on its position in the document — you never enter the numbers yourself. Cross-references with \verb|\label{...}| and \verb|\ref{...}| also use the correct number automatically and update if equations are moved.
+
+  However, an equation is \textbf{not} added to the List of Equations automatically. To add it, insert the following command after the equation (you only provide the description text, not the number):
+  \begin{verbatim}
+\addcontentsline{loe}{equation}{%
+  \protect\numberline{\theequation}Description}
+  \end{verbatim}
+
+  Symbols should be listed in the symbol list (\texttt{IX\_mysymbols.tex}) in order of appearance and explained at first mention.
+
+  \subsection{Live Examples}
+  Equations should appear in the order they are mentioned in the text; \LaTeX{} then handles the numbering automatically.
+  Example (Equation~\ref{eqn:einstein}):
+\fi
+
+\begin{equation}\label{eqn:einstein}
+  e = m c^2
+\end{equation}
+
+\ifnum\ThesisLanguage=1
+  mit den wie folgt definierten Variablen:
+\else
+  where the variables are defined as follows:
+\fi
+
+\begin{align*}
+  e\phantom{=} & \text{Energy } [\text{Joule}]       \\
+  m\phantom{=} & \text{Mass } [\text{kg}]            \\
+  c\phantom{=} & \text{Speed of Light } [\text{m/s}]
+\end{align*}
+
+\ifnum\ThesisLanguage=1
+  Weitere Beispiele — Biegespannung (Gleichung~\ref{eq:biegespannung}):
+\else
+  More examples — bending stress (Equation~\ref{eq:biegespannung}):
+\fi
+
+\begin{equation}
+  \sigma = \frac{M \cdot y}{I}
+\end{equation}
+\addcontentsline{loe}{equation}{\protect\numberline{\theequation}Biegespannung / Bending Stress}
+\label{eq:biegespannung}
+
+Mohr-Coulomb:
+\begin{equation}
+  \tau = c + \sigma \cdot \tan \phi
+\end{equation}
+\addcontentsline{loe}{equation}{\protect\numberline{\theequation}Mohr-Coulomb}
+\label{eq:mohrcoulomb}
+
+Hooke:
+\begin{equation}
+  \sigma = E \cdot \varepsilon
+\end{equation}
+\addcontentsline{loe}{equation}{\protect\numberline{\theequation}Hooke}
+\label{eq:hook}
+
+
+%==============================================================================%
+%===== HINWEIS ZUR ABGABE / SUBMISSION REMINDER =====%
+%==============================================================================%
+\vfill
+\begin{center}
+\fbox{\parbox{0.85\textwidth}{\centering
+\ifnum\ThesisLanguage=1
+  \textbf{ACHTUNG: Dieses Kapitel vor Abgabe der Arbeit auskommentieren!}\\[0.5em]
+  In \texttt{Basis.tex} die Zeile\\
+  \texttt{\textbackslash include\{./Chapters/YY\_Bearbeitungsinformationen\}}\\
+  mit \texttt{\%} auskommentieren.
+\else
+  \textbf{WARNING: Comment out this chapter before submitting your thesis!}\\[0.5em]
+  In \texttt{Basis.tex}, comment out the line\\
+  \texttt{\textbackslash include\{./Chapters/YY\_Bearbeitungsinformationen\}}\\
+  by adding \texttt{\%} at the beginning.
+\fi
+}}
+\end{center}
