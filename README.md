@@ -62,7 +62,7 @@ ICoM_Vorlage_Merged/
 
 > **Empfehlung:** Für Versionskontrolle und ein Cloud-Backup eignet sich ein **lokaler Editor** zusammen mit **Git** — siehe [Versionskontrolle mit Git / GitHub](#versionskontrolle-mit-git--github-empfohlen). Am einfachsten geht das mit **VS Code**, das Git bereits **eingebaut** hat (grafische Source-Control-Ansicht). In Overleaf ist die Git-Anbindung nur in der **kostenpflichtigen** Version verfügbar.
 >
-> **Lokal ohne Git arbeiten (etwas einfachsre Variante):** Du kannst die Vorlage auch einfach als **ZIP herunterladen** (auf GitHub: grüner Button *Code* → *Download ZIP*), den Ordner **entpacken** und mit deinem Editor öffnen. Allerdings **ohne** Versionskontrolle und Cloud-Backup. Denk in diesem Fall selbst an regelmäßige Sicherungen (z. B. Sciebo, OneDrive).
+> **Lokal ohne Git arbeiten (etwas einfachere Variante):** Du kannst die Vorlage auch einfach als **ZIP herunterladen** (auf GitHub: grüner Button *Code* → *Download ZIP*), den Ordner **entpacken** und mit deinem Editor öffnen. Allerdings **ohne** Versionskontrolle und Cloud-Backup. Denk in diesem Fall selbst an regelmäßige Sicherungen (z. B. Sciebo, OneDrive).
 
 ### a) Overleaf (empfohlen für Einsteiger)
 
