@@ -116,29 +116,6 @@ ICoM_Vorlage_Merged/
 3. `Basis.tex` öffnen, Biber als Bibliographie-Tool einstellen
 4. Kompilieren: F5 (oder Build & View)
 
-### Versionskontrolle mit Git / GitHub (empfohlen)
-
-Der schnellste und sicherste Weg, mit der Vorlage zu arbeiten, ist das **Klonen des Repositories** mit Git. So hast du von Anfang an Versionskontrolle und ein Backup in der Cloud.
-
-**Am einfachsten mit VS Code:** VS Code hat Git bereits **eingebaut** — über die grafische Source-Control-Ansicht (`Ctrl+Shift+G`) kannst du committen, pushen und pullen, ganz ohne Kommandozeile.
-
-> **TeXstudio-Nutzer:** TeXstudio hat **keine** echte Git-Integration. Wer mit TeXstudio schreibt, bedient Git separat — entweder über die Kommandozeile (s. u.) oder ein grafisches Tool wie [GitHub Desktop](https://desktop.github.com/).
-
-```bash
-# Repository klonen
-git clone <REPO-URL> meine-arbeit
-cd meine-arbeit
-
-# Eigenen Stand sichern (lokal)
-git add .
-git commit -m "Kapitel 1 begonnen"
-
-# In die Cloud hochladen (Backup)
-git push
-```
-
-> **Tipp:** Hast du noch kein Git? Installiere es von [git-scm.com](https://git-scm.com/). VS Code hat Git-Unterstützung bereits eingebaut (Source-Control-Ansicht, `Ctrl+Shift+G`).
-
 ## Fehlerbehebung / Troubleshooting
 
 ### Overleaf Gratis-Version: Kompilierzeit > 20 Sekunden
@@ -287,29 +264,6 @@ ICoM_Vorlage_Merged/
 2. Install [TeXstudio](https://www.texstudio.org/) or [Texmaker](https://www.xm1math.net/texmaker/)
 3. Open `Basis.tex`, set Biber as the bibliography tool
 4. Compile: F5 (or Build & View)
-
-### Version control with Git / GitHub (recommended)
-
-The fastest and safest way to work with the template is to **clone the repository** with Git. That gives you version control and a cloud backup from the very beginning.
-
-**Easiest with VS Code:** VS Code has Git **built in** — use the graphical Source Control view (`Ctrl+Shift+G`) to commit, push and pull without ever touching the command line.
-
-> **TeXstudio users:** TeXstudio has **no** real Git integration. If you write in TeXstudio, manage Git separately — either via the command line (see below) or a graphical tool such as [GitHub Desktop](https://desktop.github.com/).
-
-```bash
-# Clone the repository
-git clone <REPO-URL> my-thesis
-cd my-thesis
-
-# Save your progress (locally)
-git add .
-git commit -m "Started chapter 1"
-
-# Upload to the cloud (backup)
-git push
-```
-
-> **Tip:** Don't have Git yet? Install it from [git-scm.com](https://git-scm.com/). VS Code has built-in Git support (Source Control view, `Ctrl+Shift+G`).
 
 ## Troubleshooting
 
