@@ -64,7 +64,7 @@ ICoM_Vorlage_Merged/
 >
 > **Lokal ohne Git arbeiten (etwas einfachsre Variante):** Du kannst die Vorlage auch einfach als **ZIP herunterladen** (auf GitHub: grüner Button *Code* → *Download ZIP*), den Ordner **entpacken** und mit deinem Editor öffnen. Allerdings **ohne** Versionskontrolle und Cloud-Backup. Denk in diesem Fall selbst an regelmäßige Sicherungen (z. B. Sciebo, OneDrive).
 
-### Overleaf (empfohlen für Einsteiger)
+### a) Overleaf (empfohlen für Einsteiger)
 
 > **Hinweis:** Diese Vorlage ist für die kostenlose Overleaf-Version zu umfangreich (Kompilierzeit-Limit von 20 Sekunden). Tipps zum Verkleinern findest du unter [Fehlerbehebung → Overleaf Gratis-Version](#fehlerbehebung--troubleshooting).
 >
@@ -77,7 +77,7 @@ ICoM_Vorlage_Merged/
    - Main document: **Basis.tex**
 4. Kompilieren (grüner Button oder Ctrl+Enter)
 
-### VS Code + LaTeX Workshop
+### b) VS Code + LaTeX Workshop (für Versionskontrolle mit Git)
 
 1. [VS Code](https://code.visualstudio.com/) installieren
 2. Extension **LaTeX Workshop** (James Yu) installieren
@@ -109,7 +109,7 @@ ICoM_Vorlage_Merged/
 }
 ```
 
-### TeXstudio / Texmaker (lokal)
+### c) TeXstudio / Texmaker (lokal)
 
 1. [MiKTeX](https://miktex.org/) (Windows) oder [TeX Live](https://tug.org/texlive/) (alle Plattformen) installieren
 2. [TeXstudio](https://www.texstudio.org/) oder [Texmaker](https://www.xm1math.net/texmaker/) installieren
@@ -138,17 +138,6 @@ git push
 ```
 
 > **Tipp:** Hast du noch kein Git? Installiere es von [git-scm.com](https://git-scm.com/). VS Code hat Git-Unterstützung bereits eingebaut (Source-Control-Ansicht, `Ctrl+Shift+G`).
-
-#### Vorteile von Git / GitHub
-
-- **Versionskontrolle** — jeder Bearbeitungsstand wird festgehalten; du kannst jederzeit zu einer früheren Version zurückkehren (z. B. wenn ein Kapitel versehentlich gelöscht wurde).
-- **Lokale + Cloud-Version (Datensicherheit)** — deine Arbeit liegt gleichzeitig auf deinem Rechner **und** auf dem Server. Ein Festplattendefekt oder verlorener Laptop bedeutet keinen Datenverlust.
-- **Nachvollziehbarkeit** — Commit-Nachrichten dokumentieren, was wann geändert wurde.
-- **Geräteübergreifendes Arbeiten** — auf einem anderen Rechner einfach erneut `git clone` bzw. `git pull` und am gleichen Stand weiterarbeiten.
-- **Updates der Vorlage übernehmen** — neue Versionen der Vorlage lassen sich per `git pull` einspielen.
-- **Zusammenarbeit** — Betreuer:innen können (bei Bedarf) den Stand einsehen oder kommentieren.
-
-> **Hinweis zu Aux-Dateien:** Lege eine `.gitignore` an, um Build-Artefakte (`*.aux`, `*.bbl`, `*.log`, `*.toc`, …) und die PDF nicht mit zu versionieren. So bleibt das Repository schlank.
 
 ## Fehlerbehebung / Troubleshooting
 
@@ -247,7 +236,7 @@ ICoM_Vorlage_Merged/
 >
 > **Working without Git (easiest option):** You can also simply **download the template as a ZIP** (on GitHub: green *Code* button → *Download ZIP*), **unzip** the folder and open it in your editor. Fast and requires no prior knowledge — but **without** version control or automatic cloud backup. In that case, remember to make regular backups yourself (e.g. Sciebo, OneDrive).
 
-### Overleaf (recommended for beginners)
+### a) Overleaf (recommended for beginners)
 
 > **Note:** This template is too large for the free Overleaf tier (20-second compile-time limit). See [Troubleshooting → Overleaf Free Tier](#troubleshooting) for ways to reduce it.
 >
@@ -260,7 +249,7 @@ ICoM_Vorlage_Merged/
    - Main document: **Basis.tex**
 4. Compile (green button or Ctrl+Enter)
 
-### VS Code + LaTeX Workshop
+### b) VS Code + LaTeX Workshop
 
 1. Install [VS Code](https://code.visualstudio.com/)
 2. Install the **LaTeX Workshop** extension (James Yu)
@@ -292,7 +281,7 @@ ICoM_Vorlage_Merged/
 }
 ```
 
-### TeXstudio / Texmaker (local)
+### c) TeXstudio / Texmaker (local)
 
 1. Install [MiKTeX](https://miktex.org/) (Windows) or [TeX Live](https://tug.org/texlive/) (all platforms)
 2. Install [TeXstudio](https://www.texstudio.org/) or [Texmaker](https://www.xm1math.net/texmaker/)
@@ -321,17 +310,6 @@ git push
 ```
 
 > **Tip:** Don't have Git yet? Install it from [git-scm.com](https://git-scm.com/). VS Code has built-in Git support (Source Control view, `Ctrl+Shift+G`).
-
-#### Advantages of Git / GitHub
-
-- **Version control** — every state of your work is recorded; you can return to an earlier version at any time (e.g. if a chapter was accidentally deleted).
-- **Local + cloud copy (data safety)** — your work lives on your machine **and** on the server at the same time. A disk failure or a lost laptop means no data loss.
-- **Traceability** — commit messages document what changed and when.
-- **Work across devices** — on another computer just `git clone` (or `git pull`) and continue from the same state.
-- **Pull template updates** — new versions of the template can be merged in with `git pull`.
-- **Collaboration** — supervisors can (if desired) review or comment on your progress.
-
-> **Note on aux files:** Add a `.gitignore` to keep build artifacts (`*.aux`, `*.bbl`, `*.log`, `*.toc`, …) and the PDF out of version control. This keeps the repository lean.
 
 ## Troubleshooting
 
