@@ -71,7 +71,7 @@ ICoM_Vorlage_Merged/
 > **Tipp:** Die RWTH Aachen stellt über Sciebo eine **Overleaf-Professional**-Lizenz kostenlos bereit. Damit entfällt das Kompilierzeit-Limit. Anmeldung mit dem RWTH-Account unter [rwth-aachen.sciebo.de](https://rwth-aachen.sciebo.de/).
 
 1. ZIP dieser Vorlage erstellen
-2. Auf [overleaf.com](https://www.overleaf.com/) → *New Project* → *Upload Project*
+2. Auf Overleaf → *New Project* → *Upload Project*
 3. In den **Projekteinstellungen** (Gear-Icon):
    - Compiler: **pdfLaTeX**
    - Main document: **Basis.tex**
@@ -220,7 +220,7 @@ ICoM_Vorlage_Merged/
 > **Tip for RWTH members:** RWTH Aachen provides a free **Overleaf Professional** license via Sciebo, which removes the compile-time limit. Sign in with your RWTH account at [rwth-aachen.sciebo.de](https://rwth-aachen.sciebo.de/).
 
 1. Create a ZIP of this template
-2. Go to [overleaf.com](https://www.overleaf.com/) → *New Project* → *Upload Project*
+2. Go to Overleaf → *New Project* → *Upload Project*
 3. In **Project Settings** (gear icon):
    - Compiler: **pdfLaTeX**
    - Main document: **Basis.tex**
