@@ -29,9 +29,10 @@ Diese LaTeX-Vorlage ist für Bachelor- und Masterarbeiten am ICoM, RWTH Aachen k
 2. **Abkürzungen** in `Chapters/Acronyms_Definition.tex` definieren
 3. **Literatur** in `Literatur/samplebibfile.bib` eintragen
 4. **Eigene Kapitel** in `Chapters/` anlegen und in `Basis.tex` mit `\include{}` einbinden
-5. **Aufgabenstellung** als PDF unter `Chapters/Aufgabenstellung_dummy.pdf` ablegen und in `Basis.tex` einkommentieren
-6. **Eidesstattliche Versicherung** als PDF unter `Chapters/EidesstattlicheVersicherung_dummy.pdf` ablegen und in `Basis.tex` einkommentieren
-7. **Kompilieren** mit `pdflatex` → `biber` → `pdflatex` → `pdflatex`
+5. **Hinweise zur Nutzung von KI** in `Chapters/V_KI_Hinweise.tex` an die eigene Nutzung anpassen (eingesetzte KI-Tools, Art, Zweck und Umfang sowie Verantwortungserklärung)
+6. **Aufgabenstellung** als PDF unter `Chapters/Aufgabenstellung_dummy.pdf` ablegen und in `Basis.tex` einkommentieren
+7. **Eidesstattliche Versicherung** als PDF unter `Chapters/EidesstattlicheVersicherung_dummy.pdf` ablegen und in `Basis.tex` einkommentieren
+8. **Kompilieren** mit `pdflatex` → `biber` → `pdflatex` → `pdflatex`
 
 ## Dateistruktur
 
@@ -47,6 +48,7 @@ ICoM_Vorlage_Merged/
 │   ├── Acronyms_Definition.tex        ← Abkürzungen definieren
 │   ├── III_Kurzfassung.tex            ← Deutsche Kurzfassung
 │   ├── IV_Abstract.tex                ← Englisches Abstract
+│   ├── V_KI_Hinweise.tex              ← Hinweise zur Nutzung von KI (ausfüllen!)
 │   ├── IX_mysymbols.tex               ← Symbolverzeichnis
 │   ├── X_myformulas.tex               ← Formelverzeichnis
 │   ├── 1_Einleitung.tex               ← Beispielkapitel
@@ -178,9 +180,10 @@ This LaTeX template is designed for Bachelor's and Master's theses at ICoM, RWTH
 2. **Define abbreviations** in `Chapters/Acronyms_Definition.tex`
 3. **Add references** to `Literatur/samplebibfile.bib`
 4. **Create your chapters** in `Chapters/` and include them in `Basis.tex` with `\include{}`
-5. **Place your task description** PDF at `Chapters/Aufgabenstellung_dummy.pdf` and uncomment in `Basis.tex`
-6. **Place your statutory declaration** PDF at `Chapters/EidesstattlicheVersicherung_dummy.pdf` and uncomment in `Basis.tex`
-7. **Compile** with `pdflatex` → `biber` → `pdflatex` → `pdflatex`
+5. **Notes on the use of AI**: adapt `Chapters/V_KI_Hinweise.tex` to your own use (AI tools used, type, purpose and extent, statement of responsibility)
+6. **Place your task description** PDF at `Chapters/Aufgabenstellung_dummy.pdf` and uncomment in `Basis.tex`
+7. **Place your statutory declaration** PDF at `Chapters/EidesstattlicheVersicherung_dummy.pdf` and uncomment in `Basis.tex`
+8. **Compile** with `pdflatex` → `biber` → `pdflatex` → `pdflatex`
 
 ## File Structure
 
@@ -196,6 +199,7 @@ ICoM_Vorlage_Merged/
 │   ├── Acronyms_Definition.tex        ← Define abbreviations
 │   ├── III_Kurzfassung.tex            ← German abstract
 │   ├── IV_Abstract.tex                ← English abstract
+│   ├── V_KI_Hinweise.tex              ← Notes on the use of AI (fill in!)
 │   ├── IX_mysymbols.tex               ← List of symbols
 │   ├── X_myformulas.tex               ← List of equations
 │   ├── 1_Einleitung.tex               ← Example chapter

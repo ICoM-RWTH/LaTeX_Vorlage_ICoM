@@ -20,6 +20,7 @@ Die Arbeitsversion ist ein Merge aus mehreren ICoM-Vorlagen (inkl. Verbesserunge
 | **Abkürzungen** | Paket `acronym` + `VIII_myglossary.tex` | Modernes Paket `acro` + neue Datei `Acronyms_Definition.tex` (nur verwendete Abkürzungen werden gedruckt) |
 | **Fußnoten** | Pro Kapitel zurückgesetzt | Durchgehende Nummerierung (`chngcntr` / `\counterwithout`) |
 | **Anleitung** | – | Neues Kapitel `YY_Bearbeitungsinformationen.tex` (vor Abgabe entfernen) |
+| **KI-Hinweise** | – | Neues Kapitel `V_KI_Hinweise.tex` (zweisprachig) direkt nach dem Abstract: Dokumentation der Nutzung von KI-Tools inkl. Verantwortungserklärung |
 | **Dokumentation** | – | Neue `README.md` (Setup, Editoren, Troubleshooting) |
 
 ---
@@ -52,7 +53,7 @@ Die Arbeitsversion ist ein Merge aus mehreren ICoM-Vorlagen (inkl. Verbesserunge
 
 ## Geänderte / neue Dateien
 
-**Neu:** `config.tex`, `README.md`, `Chapters/Acronyms_Definition.tex`, `Chapters/YY_Bearbeitungsinformationen.tex`, `.vscode/tasks.json`
+**Neu:** `config.tex`, `README.md`, `Chapters/Acronyms_Definition.tex`, `Chapters/V_KI_Hinweise.tex`, `Chapters/YY_Bearbeitungsinformationen.tex`, `.vscode/tasks.json`
 
 **Entfernt:** `Chapters/VIII_myglossary.tex` (durch `Acronyms_Definition.tex` ersetzt)
 

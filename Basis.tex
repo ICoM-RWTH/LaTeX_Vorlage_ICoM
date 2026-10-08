@@ -222,7 +222,11 @@
 
 %-------- Hinweise zur Nutzung von KI / Use of AI
 \phantomsection
-\addcontentsline{toc}{chapter}{Hinweise zur Nutzung von KI}
+\ifnum\ThesisLanguage=1
+  \addcontentsline{toc}{chapter}{Hinweise zur Nutzung von KI}
+\else
+  \addcontentsline{toc}{chapter}{Notes on the Use of AI}
+\fi
 \include{./Chapters/V_KI_Hinweise}
 
 %-------- Inhaltsverzeichnis / Table of Contents
